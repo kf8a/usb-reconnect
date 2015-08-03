@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	var usb_disconnect = regexp.MustCompile("usb 1-2: reset full-speed USB device number 15")
+	var usb_disconnect = regexp.MustCompile("usb 1-2: New USB device found, idVendor=0724, idProduct=0004")
 	var usb_message = regexp.MustCompile("usb")
 	var usb_reconnect = "attach-device peaksimple /home/bohms/usb.xml"
 
