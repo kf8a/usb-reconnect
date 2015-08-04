@@ -27,7 +27,8 @@ func main() {
 		if usb_disconnect.Match([]byte(line.Text)) || usb_found.Match([]byte(line.Text)) {
 			log.Println("usb disconnect detected ... reconnecting")
 			log.Println(line.Text)
-			_, err := exec.Command("virsh", usb_reconnect).Output()
+			output, err := exec.Command("virsh", usb_reconnect).Output()
+			log.Println(string(output))
 			if err != nil {
 				log.Println(err)
 			}
